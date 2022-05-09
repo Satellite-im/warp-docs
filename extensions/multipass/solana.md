@@ -57,7 +57,7 @@ return an error.
 
 ### By Public Key
 ```rust
-    let ident = account.get_identity(Identifer::PublicKey(PublicKey::from_bytes(....))).unwrap()
+    let ident = account.get_identity(Identifier::public_key(PublicKey::from_bytes(....))).unwrap()
 ```
 
 ### By Username
