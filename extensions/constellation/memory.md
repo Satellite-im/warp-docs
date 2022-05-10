@@ -1,12 +1,12 @@
 ## In-Memory Extension Overview
 
-In-Memory Filesystem extension is a in-memory storage extension designed for storing and retreiving data from memory.
+In-Memory Filesystem extension is an in-memory storage extension designed for storing and retrieving data from memory.
 
 ***
-Note: This extension is used for development and testing purposes. Use of this extension will result in data loss if it is not pulled from memory.
+Note: This extension is used for development and testing purposes. The use of this extension will result in data loss if it is not pulled from memory.
 ***
 
-***WARNING: PLEASE BE SURE TO HAVE ENOUGH AVAILABLE MEMORY BEFORE STORING ANY LARGE AMOUNTS OF DATA IN MEMORY, OTHERWISE THERE IS A CHANGE OF SYSTEM UNSTABILITY OR THE APPLICATION CRASHING DUE TO AN OUT-OF-MEMORY ERROR***
+***WARNING: PLEASE BE SURE TO HAVE ENOUGH AVAILABLE MEMORY BEFORE STORING ANY LARGE AMOUNTS OF DATA IN MEMORY, OTHERWISE THERE IS A CHANGE OF SYSTEM INSTABILITY OR THE APPLICATION CRASHES DUE TO AN OUT-OF-MEMORY ERROR***
 
 ## Importing extension into cargo project
 
