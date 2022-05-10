@@ -1,6 +1,6 @@
 # Pocket Dimension (Cacher)
 
-The **PocketDimension** allows [Modules](modules/overview) to store data for quick indexing and searching later on. Additionally, it may be useful to cache frequently used data so that request can be made faster. The **PocketDimension** makes this easy by sorting the data per module, as well as allowing querying by specific information stored inside the payload of the [Data Object](data/overview) for a quick turnaround for search results and other data lookups. Data added to the **PocketDimension** will be versioned using the standard version attached to the [Data Object](data/overview). When data is queried we will always return the latest [Version](data/overview#version) (the greatest number). You can think of this as a giant void to throw data into and query from later.
+The **PocketDimension** allows [Modules](modules/overview) to store data for quick indexing and searching later on. Additionally, it may be useful to cache frequently used data so that requests can be made faster. The **PocketDimension** makes this easy by sorting the data per module, as well as allowing querying by specific information stored inside the payload of the [Data Object](data/overview) for a quick turnaround for search results and other data lookups. Data added to the **PocketDimension** will be versioned using the standard version attached to the [Data Object](data/overview). When data is queried we will always return the latest [Version](data/overview#version) (the greatest number). You can think of this as a giant void to throw data into and query from later.
 
 The **PocketDimension** itself is built on an abstract interface, so we can switch the storage method on a whim. This can include things like Redis, The Graph, FlatFile DBs, etc.
 
@@ -9,7 +9,7 @@ One last thing to note, data stored within a dimension is **never** mutated (onl
 
 #### Pushing Data
 
-Data can simply be dumped into a dimension, there is not much to worry about other than making sure you're storing the data in the correct dimension. Each module should have at least one of it's own dimensions, it's very rare that two or more modules will share a dimension. 
+Data can simply be dumped into a dimension, there is not much to worry about other than making sure you're storing the data in the correct dimension. Each module should have at least one of its own dimensions, two or more modules will rarely share a dimension. 
 
 Updating data is super easy, any time the **PocketDimension** receives an object with an ID that already exists in the dimension, it will version the [Data Object](data/overview) and load it in. 
 
@@ -45,7 +45,7 @@ PocketDimension::get_data(DataType::Module(Module::Messaging), None)
 
 #### Executing
 
-You **MUST** provide either a query method, or run the `TBD` method to find data. This is to prevent unnecessary 
+You **MUST** provide either a query method or run the `TBD` method to find data. This is to prevent unnecessarily 
 querying of large amounts of data.
 
 #### Limiting
