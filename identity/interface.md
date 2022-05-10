@@ -26,7 +26,7 @@ pub struct Badge {
 }
 
 
-/// `Graphics` are user mutable hashes pointing to remote locations housing the users preffered
+/// `Graphics` are user mutable hashes pointing to remote locations housing the user's preferred
 /// profile picture as well as the profile banner.
 pub struct Graphics {
     /// Hash to profile picture
@@ -142,21 +142,21 @@ Multipass::get_identity(&self, id: Identifier) -> Result<Identity>;
 Multipass::get_own_identity(&self) -> Result<Identity> // Returns Identity
 ```
 
-The function will return the `Identity` struct. After each fetch of an identity a new version of the identity will be stored in cache automatically.
+The function will return the `Identity` struct. After each fetch of an identity, a new version of the identity will be stored in the cache automatically.
 
 #### Updating Own Identity
 
-Allows user to update mutable identity variables such as their `Username`, `Graphics`, `Status` and more. Other values like the global `roles`, `available_badges` and more are only mutable by outside entities such as `Satellite`. These represent global application identity traits.
+Allows users to update mutable identity variables such as their `Username`, `Graphics`, `Status`, and more. Other values like the global `roles`, `available_badges`, and more are only mutable by outside entities such as `Satellite`. These represent global application identity traits.
 
 ```rust
 Multipass::update_identity(&mut self, option: IdentityUpdate) -> Result<()>;
 ```
 
-The cache is updated to reflect our profile changes. This allows us to optimistically update UIs without waiting for on chain transactions to process.
+The cache is updated to reflect our profile changes. This allows us to optimistically update UIs without waiting for on-chain transactions to process.
 
 #### Create Identity
 
-This should only be called once, this is used to create a new account on the system. Calling this will store the encrypted PrivateKey on disk. Calling again will overwrite the previous account which cannot be retrieved unless the PrivateKey was backed up. The PrivateKey will be encrypted by the supplied `passphrase` so that it's not readable on disk.
+This should only be called once, this is used to create a new account on the system. Calling this will store the encrypted PrivateKey on disk. Calling again will overwrite the previous account which cannot be retrieved unless the PrivateKey was backed up. The PrivateKey will be encrypted by the supplied `passphrase` so that it's not readable on the disk.
 
 ```rust
 Multipass::create_identity(&mut self, username: Option<&str>, passphrase: Option<&str>) -> Result<PublicKey>; // Returns PublicKey, stores encrypted private key
@@ -164,7 +164,7 @@ Multipass::create_identity(&mut self, username: Option<&str>, passphrase: Option
 
 #### Decrypt Private Key
 
-Decrypts the stored PrivateKey given a passphrase to allow interactions with the account such as on chain transactions.
+Decrypts the stored PrivateKey given a passphrase to allow interactions with the account such as on-chain transactions.
 
 ```rust
 Multipass::decrypt_private_key(&self, passphrase: Option<&str>) -> Result<Vec<u8>>;
@@ -180,7 +180,7 @@ Multipass::refresh_cache(&mut self) -> Result<()>;
 
 ### Friend Request/Contacts
 
-Sending, accepting, denying or blocking requests uses a public key of an account.
+Sending, accepting, denying, or blocking requests uses a public key of an account.
 
 ***Note: `Friends` is required with `MultiPass`***
 
@@ -211,27 +211,27 @@ This will be used to close a request without accepting or denying it.
 ```
 
 
-#### List Incoming Friend Request
+#### List Incoming Friend Requests
 
-***Note: This will only list pending request***
+***Note: This will only list pending requests ***
 
 ```rust
   Friends::list_incoming_request(&self) -> Result<Vec<FriendRequest>>;
 ```
 
 
-#### List Outgoing Friend Request
+#### List Outgoing Friend Requests
 
-***Note: This will only list pending request***
+***Note: This will only list pending requests ***
 
 ```rust
   Friends::list_outgoing_request(&self) -> Result<Vec<FriendRequest>>;
 ```
 
 
-#### List All Friend Request
+#### List All Friend Requests
 
-***Note: This will list all request regardless of status***
+***Note: This will list all requests regardless of status***
 
 ```rust
   Friends::list_all_request(&self) -> Result<Vec<FriendRequest>>;
@@ -270,7 +270,7 @@ This will check to see if the account is friends with the owner of the public ke
 
 #### Key Exchange
 
-This will allow the current account to perform a key exchange, allowing both the user and their friend to form a dh key for encryption
+This will allow the current account to perform key exchange, allowing both the user and their friend to form a DH key for encryption
 
 ```rust
   Friends::key_exchange(&self, identity: Identity) -> Result<Vec<u8>>;
