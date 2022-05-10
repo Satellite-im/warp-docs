@@ -1,7 +1,7 @@
 ## IPFS Extension Overview
 
 [Installing IPFS Desktop](https://docs.ipfs.io/install/ipfs-desktop/)
-[Installing IPFS CLI](https://docs.ipfs.io/how-to/command-line-quick-start/)***Recommended***
+[Installing IPFS CLI](https://docs.ipfs.io/how-to/command-line-quick-start/) ***Recommended***
 
 ***Note: IPFS is required to be installed and running on your machine to use this extension at this time.***
 
