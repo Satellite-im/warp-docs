@@ -1,7 +1,7 @@
 ## IPFS Extension Overview
 
 [Installing IPFS Desktop](https://docs.ipfs.io/install/ipfs-desktop/)
-[Installing IPFS CLI](https://docs.ipfs.io/how-to/command-line-quick-start/)***Recommended***
+[Installing IPFS CLI](https://docs.ipfs.io/how-to/command-line-quick-start/) ***Recommended***
 
 ***Note: IPFS is required to be installed and running on your machine to use this extension at this time.***
 
@@ -24,7 +24,7 @@ warp-extensions = { git = "https://github.com/Satellite-im/Warp", features = ["f
 	let mut system = IpfsFileSystem::new();
 ```
 
-If you have a custom url to ipfs api server you can do the following
+If you have a custom URL to ipfs API server you can do the following
 
 ```rust
 	let mut system = IpfsFileSystem::new_with_uri("https://127.0.0.1:5001").unwrap(); 

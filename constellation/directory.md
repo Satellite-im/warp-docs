@@ -1,6 +1,6 @@
 # Directory
 
-The `Directory`, much like `File`, is built on top of `Item`, but include a lot more functionality than `File` that 
+The `Directory`, much like `File`, is built on top of `Item`, but includes a lot more functionality than `File` that 
 allow for storage of both `File` and `Directory`.
 
 ### Creating a `Directory`
@@ -19,7 +19,7 @@ fn main() {
 
 ### Creating recursive sub `Directory`
 
-You can create recursive directories (similar to `mkdir -p` in unix-like environment)
+You can create recursive directories (similar to `mkdir -p` in a unix-like environment)
 
 ```rust
 use warp::constellation::{directory::Directory, item::Item};
@@ -48,7 +48,7 @@ fn main() {
 }
 ```
 
-### Adding a item to `Directory`
+### Adding a item to the `Directory`
 
 ```rust
 use warp::constellation::{
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-### Get index of a item in a `Directory`
+### Get the index of an item in a `Directory`
 
 Getting the item index (position) within a Directory can be useful if you wish to manually get the item from the array of items through `Directory::list_item`
 
@@ -86,7 +86,7 @@ fn main() {
 }
 ```
 
-### Get a item from a `Directory`
+### Get an item from a `Directory`
 
 ```rust
 use warp::constellation::{
@@ -103,7 +103,7 @@ fn main() {
 }
 ```
 
-You can also get a item from a `Directory` using a specific path
+You can also get an item from a `Directory` using a specific path
 
 ```rust
 use warp::constellation::{directory::Directory};
@@ -124,7 +124,7 @@ fn main() {
     
 }
 ```
-### Renaming a item within a `Directory`
+### Renaming an item within a `Directory`
 
 ```rust
 use warp::constellation::{
@@ -143,7 +143,7 @@ fn main() {
 }
 ```
 
-### Removing a item within a `Directory`
+### Removing an item within a `Directory`
 
 ```rust
 use warp::constellation::{
@@ -161,7 +161,7 @@ fn main() {
 }
 ```
 
-You can also remove a item from a `Directory` using a specific path
+You can also remove an item from a `Directory` using a specific path
 
 ```rust
 use warp::constellation::{

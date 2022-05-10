@@ -1,6 +1,6 @@
 # Constellation
 
-The `Constellation` is an trait that acts similarly to `Directory`, however, it includes helpful methods to upload/download files, backup the structure, import the structure and more. 
+The `Constellation` is a trait that acts similarly to `Directory`, however, it includes helpful methods to upload/download files, backup the structure, import the structure, and more. 
 
 
 ## Filesystem
@@ -81,7 +81,7 @@ impl Constellation for ExampleFileSystem {
 
 ### Utilizing Filesystem functions
 
-After everything is im place, we can now utilize the filesystem functions to access and modify (eg add/remove files or directories) the index.
+After everything is in place, we can now utilize the filesystem functions to access and modify (eg add/remove files or directories) the index.
 
 ```rust
 // ...
@@ -96,7 +96,7 @@ This will create a directory called `test` at the root of the filesystem.
 
 ### Uploading/Downloading
 
-**Note: This would be based [warp-fs-memory](https://github.com/Satellite-im/Warp/tree/main/extensions/warp-fs-memory) extension. This also assumes you have a async system such as tokio setup**
+**Note: This would be based [warp-fs-memory](https://github.com/Satellite-im/Warp/tree/main/extensions/warp-fs-memory) extension. This also assumes you have an async system such as a tokio setup**
 
 #### Uploading a file
 

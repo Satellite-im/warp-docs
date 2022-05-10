@@ -1,6 +1,6 @@
 # Tesseract
 
-Tesseract is an easy way to store encrypted strings for use later on, this can be user submitted API keys, locally stored keys, and more.
+Tesseract is an easy way to store encrypted strings for use later on, this can be user-submitted API keys, locally stored keys, and more.
 
 ## Interface
 
@@ -28,7 +28,7 @@ store.lock();
 
 ### Storing a key
 
-Storing a key requries unlocking the store then putting a specific key into it with the `store` method. 
+Storing a key requires unlocking the store and then putting a specific key into it with the `store` method. 
 
 ```rust
 use warp::tesseract::Tesseract;
@@ -71,7 +71,7 @@ let value = store.retrieve("MY_KEY").unwrap();
 
 #### Enabling Autosave
 
-Tesseract has the ability to autosave when data is being set into the data store.
+Tesseract can autosave when data is being sent into the data store.
 
 ```rust
 use warp::tesseract::Tesseract;

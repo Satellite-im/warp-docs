@@ -2,7 +2,7 @@
 
 ## Overview
 
-Hooks allow us to create subscription points for extensions of the platform to listen upon to know when a module does something. They are simple to implement into your module as well as use for external APIs.
+Hooks allow us to create subscription points for extensions of the platform to listen upon to know when a module does something. They are simple to implement into your module as well as used for external APIs.
 
 ## Usage
 
@@ -37,7 +37,7 @@ fn main() {
 
 #### Subscribing to Hook Triggers
 
-You may subscribe to be notified via a `Fn` closure when a hook is triggered as well.
+You may subscribe to be notified via an `Fn` closure when a hook is triggered as well.
 
 ```rust
 use warp::hooks::hooks::{Hook, Hooks};
@@ -54,7 +54,7 @@ fn main() {
 
 #### Getting Registered Hooks
 
-Lastly it can be useful to see which hooks are currently registered in the system. Getthing those is also very straightforward.
+Lastly, it can be useful to see which hooks are currently registered in the system. Getting those are also very straightforward.
 
 ```rust
 use warp_hooks::hooks::{Hook, Hooks};

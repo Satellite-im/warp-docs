@@ -16,7 +16,7 @@ let mut directory = Directory::new("SomeDirName");
 // ...
 ```
 
-Great, now we've got a new directory created at the root of our filesystem. Let's go ahead and add a sub directory to it!
+Great, now we've got a new directory created at the root of our filesystem. Let's go ahead and add a subdirectory to it!
 
 ```rust
 // ...
@@ -24,7 +24,7 @@ let sub = Directory::new("Sub Directory");
 directory.add_item(sub)?;
 // ...
 ```
-Now we've got two directories, `SomeDirName` with a sub directory of `Sub Directory`.
+Now we've got two directories, `SomeDirName` with a subdirectory of `Sub Directory`.
 We can validate that our filesystem looks as expected.
 
 ```rust
@@ -33,21 +33,21 @@ if directory.has_item("Sub Directory") { ... }
 // ...
 ```
 
-This will return a true if the directory we created exist.
-Lastly you may want to get the directory later. We can easily do that using the example below.
+This will return a true if the directory we created exists.
+Lastly, you may want to get the directory later. We can easily do that using the example below.
 
 ```rust
 // ...
 let my_test_dir = directory.get_item("Sub Directory")?;
 ```
 
-If you want to obtain a mutable reference of directory we can do the following
+If you want to obtain a mutable reference of the directory we can do the following
 
 ```rust
 let mut my_test_dir = directory.get_item_mut("Sub Directory")?;
 ```
 
-Removing a directory will remove the contense of the directory as well as the directory itself. You can delete a directory using the example below.
+Removing a directory will remove the content of the directory as well as the directory itself. You can delete a directory using the example below.
 
 ```rust
 directory.remove_item("Sub Directory")?;
@@ -104,4 +104,4 @@ Great now let's head back to the root of our constellation.
 filesystem.go_back()?;
 ```
 
-As you can see it's pretty straightforward but can help aliviate needing to write front end utilities to navigate through the index.
+As you can see it's pretty straightforward but can help alleviate needing to write front-end utilities to navigate through the index.
