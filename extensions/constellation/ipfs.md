@@ -24,7 +24,7 @@ warp-extensions = { git = "https://github.com/Satellite-im/Warp", features = ["f
 	let mut system = IpfsFileSystem::new();
 ```
 
-If you have a custom url to ipfs api server you can do the following
+If you have a custom URL to ipfs API server you can do the following
 
 ```rust
 	let mut system = IpfsFileSystem::new_with_uri("https://127.0.0.1:5001").unwrap(); 
