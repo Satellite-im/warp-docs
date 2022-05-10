@@ -34,7 +34,7 @@ fn main() {
 }
 ```
 
-You are able to obtain a reference of `File` or `Directory` from an `Item`. 
+You can obtain a reference of `File` or `Directory` from an `Item`. 
 
 ```rust
 use warp::constellation::{
