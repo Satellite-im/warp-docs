@@ -23,6 +23,10 @@
 - **Raygun (Messaging)**
   - [Overview](raygun/overview.md)
   - [Interface](raygun/interface.md)
+- **Extension Standard**
+  - [FFI](standards/ffi.md)
+  - [Overview](standards/overview.md)
+  - [Wasm](standards/wasm.md)
 - **Tesseract (KeyStore)**
   - [Overview](tesseract/overview.md)
 - **Quantum Entanglement (P2P)**
