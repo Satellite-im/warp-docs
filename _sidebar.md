@@ -27,6 +27,9 @@
   - [Overview](tesseract/overview.md)
 - **Quantum Entanglement (P2P)**
   - [Overview](qep2p/Overview.md)
+  - [Interface](qep2p/Interface.md)
+  - [Peer](qep2p/Peer.md)
+  - [Mesh](qep2p/Mesh.md)
 - **Retro Relay**
   - [Overview](api/overview.md)
 - **Extensions**
