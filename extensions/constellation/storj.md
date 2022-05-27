@@ -80,7 +80,7 @@ let secret_key = tesseract.retrieve("STORJ_SECRET_KEY").unwrap();
 
 let mut system = StorjFilesystem::new(access_key, secret_key);
 
-system.from_buffer("new_file", &b"This is content to the file".to_vec()).await.unwrap();
+system.put_buffer("new_file", &b"This is content to the file".to_vec()).await.unwrap();
 ```
 
 #### Downloading Content
@@ -93,9 +93,7 @@ let secret_key = tesseract.retrieve("STORJ_SECRET_KEY").unwrap();
 
 let mut system = StorjFilesystem::new(access_key, secret_key);
 
-let mut buffer = vec![];
-
-system.to_buffer("new_file", &mut buffer).await.unwrap();
+let buffer = system.get_buffer("new_file").await.unwrap();
 
 println!("{}", String::from_utf8_lossy(&buffer));
 ```

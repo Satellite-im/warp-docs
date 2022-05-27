@@ -75,8 +75,7 @@ Incompatible  (would error with an incompatible C-style enum)
 }
 ```
 
-Solution
-
+Compatible: 
 ```rust
 struct MyStruct(MyEnum);
 
@@ -112,4 +111,4 @@ impl MyStruct {
 
 Note that if youre not exporting the enum to be used by the browser then tuple-style enums are fine to use within Rust. This may change in the future where wasm-bindgen may be able to take such style and translate it into javascript to be used.
 
-[2]: Crates that are compatible with `no_std` can be easily used within wasm but would require a wrapper around them for direct from the browser. See https://github.com/Satellite-im/Warp/blob/main/warp/src/crypto/signature.rs for an example of us wrapping around ed25519_dalek, which is compatible with no_std. There may be cases where no_std may not be supported by wasm (eg custom allocator, specific calls to the system thats outside of the scope of wasm32, etc).
+[2]: Crates that are compatible with `no_std` can be easily used within wasm but would require a wrapper around them for direct from the browser. See https://github.com/Satellite-im/Warp/blob/main/warp/src/crypto/signature.rs for an example of us wrapping around ed25519_dalek, which is compatible with no_std. There may be cases where no_std may not be supported by wasm (eg custom allocator, specific calls to the system thats outside of the scope of wasm32, requires a specific platform, etc).

@@ -37,7 +37,7 @@ warp-extensions = { git = "https://github.com/Satellite-im/Warp", features = ["f
 	
 	let mut system = MemorySystem::new();
 
-	system.from_buffer("new_file", &b"This is content to the file".to_vec()).await.unwrap();
+	system.put_buffer("new_file", &b"This is content to the file".to_vec()).await.unwrap();
 
 ```
 
@@ -49,9 +49,7 @@ warp-extensions = { git = "https://github.com/Satellite-im/Warp", features = ["f
 	
 	let mut system = MemorySystem::new();
 
-	let mut buffer = vec![];
-
-	system.to_buffer("new_file", &mut buffer).await.unwrap();
+	let buffer = system.get_buffer("new_file").await.unwrap();
 
 	println!("{}", String::from_utf8_lossy(&buffer));
 

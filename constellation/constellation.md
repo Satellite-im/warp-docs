@@ -41,7 +41,7 @@ Now we would need to implement `Constellation` for our struct `ExampleFileSystem
 ```rust
 impl Extension for ExampleFileSystem {
     fn id(&self) -> String {
-        String::from("fs-example")
+        String::from("warp-fs-example")
     }
     fn name(&self) -> String {
         String::from("Example Filesystem")
@@ -111,7 +111,7 @@ let mut buf = vec![];
 let mut file = std::fs::File::open("hello.txt")?;
 file.read_to_end(&mut buf)?;
 
-filesystem.from_buffer("hello.txt", &buf).await.unwrap();
+filesystem.put_buffer("hello.txt", &buf).await.unwrap();
 ```
 
 #### Download a file
@@ -122,9 +122,7 @@ use warp_extension::fs_memory::MemorySystem;
 
 let mut filesystem = MemorySystem::new();
 
-let mut buf = vec![];
-
-filesystem.to_buffer("test_file", &mut buf).await.unwrap();
+let buf = filesystem.get_buffer("test_file").await.unwrap();
 
 println!("Output: {}", String::from_utf8_lossy(&buffer).to_string());
 ```

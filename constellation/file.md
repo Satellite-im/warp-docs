@@ -47,12 +47,9 @@ use std::io::Cursor;
 use warp::constellation::file::{File, Hash};
 
 fn main() {
-    let mut file = File::new("test.txt");
+    file.hash_mut().hash_from_file("test.txt").unwrap();
 
-    let mut cursor = Cursor::new(b"Hello, World!");
-    file.hash_mut().sha256hash_from_reader(&mut cursor).unwrap();
-
-    assert_eq!(file.hash().sha256, Some(String::from("DFFD6021BB2BD5B0AF676290809EC3A53191DD81C7F70A4B28688A362182986F")))
+    assert_eq!(file.hash().sha256(), Some(String::from("QmdR1iHsUocy7pmRHBhNa9znM8eh8Mwqq5g5vcw8MDMXTt")))
 }
 
 ```

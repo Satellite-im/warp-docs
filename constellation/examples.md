@@ -104,4 +104,4 @@ Great now let's head back to the root of our constellation.
 filesystem.go_back()?;
 ```
 
-As you can see it's pretty straightforward but can help alleviate needing to write front-end utilities to navigate through the index.
+As you can see it's pretty straight forward but can help alleviate needing to write front-end utilities to navigate through the index.

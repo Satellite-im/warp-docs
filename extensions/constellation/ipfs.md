@@ -40,7 +40,7 @@ If you have a custom URL to ipfs API server you can do the following
 
 	let mut system = IpfsFileSystem::new();
 
-	system.from_buffer("new_file", &b"This is content to the file".to_vec()).await.unwrap();
+	system.put_buffer("new_file", &b"This is content to the file".to_vec()).await.unwrap();
 
 ```
 
@@ -52,9 +52,7 @@ If you have a custom URL to ipfs API server you can do the following
 
 	let mut system = IpfsFileSystem::new();
 
-	let mut buffer = vec![];
-
-	system.to_buffer("new_file", &mut buffer).await.unwrap();
+	let buffer = system.get_buffer("new_file").await.unwrap();
 
 	println!("{}", String::from_utf8_lossy(&buffer));
 
