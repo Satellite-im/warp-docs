@@ -109,7 +109,7 @@ let secret_key = tesseract.retrieve("STORJ_SECRET_KEY").unwrap();
 
 let mut system = StorjFilesystem::new(access_key, secret_key);
 
-system.sync_ref().unwrap(); // To make sure the link is up to date
+system.sync_ref(.....).unwrap(); // To make sure the link is up to date
 
 let file = system.current_directory().get_item("new_item").and_then(warp::item::Item::get_file).unwrap();
 

@@ -17,15 +17,13 @@ warp-extensions = { git = "https://github.com/Satellite-im/Warp", features = ["m
 Here you will also need to utilize tesseract when utilizing multipass extension
 
 ```rust
-    // Use development network.
-    let mut account = SolanaAccount::with_devnet();
-    // This is to allow `Tesseract` to be shared across multiple threads in a safe manner
 
     // In real world application, you would want this to be loading from a file 
     let mut tesseract = Tesseract::default();
-    // This is to allow `Tesseract` to be shared across multiple threads in a safe manner
-    let tesseract = Arc::new(Mutex::new(tesseract));
     tesseract.unlock(b"this is my totally secured password that should nnever be embedded in code").unwrap();
+    // Use development network.
+    let mut account = SolanaAccount::with_devnet(&tesseract);
+
 ```
 
 ## Creating a new account
