@@ -16,9 +16,9 @@ With that said, the extensions that wish to be compatible with wasm-bindgen:
 
 2. Should avoid any incompatible imports (eg std::io::Read, std::io::Write, etc). Such imports should be gated behind `#[cfg(not(target_arch="wasm32"))]` to ensure it builds and executes successfully.
 
-   a. You are able to use `cfg-if` crate if that would make it easier. 
+   a. You are able to use `cfg-if` crate if that would make it easier in instances where you cannot use the cfg macro directly. 
 
-3. Should utilize wasm-bindgen, js-sys, web-sys or related crates where needed. These crates make it easier to interact with dom and perform various of task on the browser. It also gives utility functions to convert some items to others. Eg Futures in rust are considered as a Promise in Js, though for traits functions utilizing async (through async-trait or similar) shouldnt need to worry about external conversion. 
+3. Should utilize `wasm-bindgen`, `js-sys`, `web-sys` or related crates where needed. These crates make it easier to interact with dom and perform various of task on the browser. It also gives utility functions to convert some items to others. Eg Futures in rust are considered as a Promise in Js, though for traits functions utilizing async (through async-trait or similar) shouldnt need to worry about external conversion. 
 
 4. May want to try to keep the functionality of the extension within the trait functions. This would ensure the need of not having any irrelevant types or exports that cannot be used. The constructor function may have such exports such as C-style enums[1], etc.
 
@@ -111,4 +111,4 @@ impl MyStruct {
 
 Note that if youre not exporting the enum to be used by the browser then tuple-style enums are fine to use within Rust. This may change in the future where wasm-bindgen may be able to take such style and translate it into javascript to be used.
 
-[2]: Crates that are compatible with `no_std` can be easily used within wasm but would require a wrapper around them for direct from the browser. See https://github.com/Satellite-im/Warp/blob/main/warp/src/crypto/signature.rs for an example of us wrapping around ed25519_dalek, which is compatible with no_std. There may be cases where no_std may not be supported by wasm (eg custom allocator, specific calls to the system thats outside of the scope of wasm32, requires a specific platform, etc).
+[2]: Crates that are compatible with `no_std` *could* be used within wasm but would require a wrapper around them for them to be used by the browser. See https://github.com/Satellite-im/Warp/blob/main/warp/src/crypto/signature.rs for an example of us wrapping around ed25519_dalek, which is compatible with no_std. There may be cases where no_std may not be supported by wasm (eg custom allocator, specific calls to the system thats outside of the scope of wasm32, requires a specific platform, etc).
