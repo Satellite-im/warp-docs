@@ -163,16 +163,3 @@ You would be able to check to determine if you are friends with somebody. Will r
 ```rust
     account.has_friend(pubkey)
 ```
-
-
-### Key Exchange
-
-This would allow you to perform a Key Exchange (ECDH) with a friend. ***Note: This function requires a X25519 Public Key to be provided, which can be created using `X25519Secret::public_key` after importing the ED25519 Keypair using `X25519Secret::from_ed25519_keypair` and importing the bytes into `PublicKey` that is supplied by MultiPass***
-
-```rust
-    let x25519_pubkey = PublicKey::from(.....);
-
-    account.key_exchange(x25519_pubkey);
-```
-
-***Notice: This function may be removed to allow key exchange to be handled outside of MultiPass. It is recommended that key exchange is performed externally for the time being.***

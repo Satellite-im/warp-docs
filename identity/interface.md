@@ -259,21 +259,10 @@ This will be used to close a request without accepting or denying it.
   Friends::list_friends(&self) -> Result<Vec<Identity>>;
 ```
 
-#### Is Friends
+#### Has Friend
 
 This will check to see if the account is friends with the owner of the public key
 
 ```rust
   Friends::has_friend(&self, pubkey: PublicKey) -> Result<()>;
 ```
-
-
-#### Key Exchange
-
-This will allow the current account to perform key exchange, allowing both the user and their friend to form a DH key for encryption
-
-```rust
-  Friends::key_exchange(&self, identity: Identity) -> Result<Vec<u8>>;
-```
-
-
