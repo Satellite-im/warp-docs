@@ -1,2 +1,3 @@
 include:
   - "_*.md"
+  - "_media"
