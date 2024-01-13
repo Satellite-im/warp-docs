@@ -17,7 +17,7 @@
   - [File](constellation/file.md)
   - [Directory](constellation/directory.md)
   - [Constellation](constellation/constellation.md)
-- **Mulit Pass (Identity)**
+- **Multi Pass (Identity)**
   - [Overview](identity/overview.md)
   - [Interface](identity/interface.md)
 - **Raygun (Messaging)**
